@@ -17,13 +17,13 @@
 > per question. Each bullet should be 1-2 sentences max.
 
 - **Why a single shortest-path run from S is not enough:**
-  _Your answer here._
+  _Each relic needs to be visited. A single shortest-path run may not visit each relic._
 
 - **What decision remains after all inter-location costs are known:**
-  _Your answer here._
+  _After all inter-location costs are known, we must determine which visiting order is the most cost-efficient._
 
 - **Why this requires a search over orders (one sentence):**
-  _Your answer here._
+  _To make the most cost-efficient run, we want to prioritize the corridors with the least amount of torch cost._
 
 ---
 
