@@ -10,12 +10,15 @@
 
 ---
 
-## Entry 1 – [Date]: Initial Plan
+## Entry 1 – [May 12, 2026]: Initial Plan
 
 > Required. Write this before writing any code. Describe your plan: what you will
 > implement first, what parts you expect to be difficult, and how you plan to test.
 
-_Your entry here._
+_First, I will write out the problem on paper and examine the example graphs given. 
+Following the steps described in the README, I will analyze the problem, noting the choices I make and why.
+I expect the actual implementation will be the most difficult.
+To test, I will debug the test cases, keeping track of every decision the code makes._
 
 ---
 
