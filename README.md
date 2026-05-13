@@ -33,22 +33,22 @@
 
 > List the source node types as a bullet list. For each, one-line reason.
 
-| Source Node Type | Why it is a source |
-|---|---|
-| _node type_ | _one-line reason_ |
-| _node type_ | _one-line reason_ |
+| Source Node Type    | Why it is a source                             |
+|---------------------|------------------------------------------------|
+| _Entrance Node S_   | _Can travel to other nodes starting at S._     |
+| _Dungeon Locations_ | _Can travel to other locations and the exit T_ |
 
 ### Part 2b: Distance Storage
 
 > Fill in the table. No prose required.
 
-| Property | Your answer |
-|---|---|
-| Data structure name | |
-| What the keys represent | |
-| What the values represent | |
-| Lookup time complexity | |
-| Why O(1) lookup is possible | |
+| Property | Your answer                                                |
+|---|------------------------------------------------------------|
+| Data structure name | Adjacency Matrix                                           |
+| What the keys represent | start location 'u' and end location 'v'                        |
+| What the values represent | Torch cost to reach that location from the source location |
+| Lookup time complexity | O(1)                                                       |
+| Why O(1) lookup is possible | Look up cost for (u, v). |
 
 ### Part 2c: Precomputation Complexity
 

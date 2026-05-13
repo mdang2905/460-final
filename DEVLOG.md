@@ -22,12 +22,13 @@ To test, I will debug the test cases, keeping track of every decision the code m
 
 ---
 
-## Entry 2 – [Date]: [Short description]
+## Entry 2 – [May 12, 2026]: Wrong assumption
 
 > Required. At least one entry must describe a bug, wrong assumption, or design change
 > you encountered. Describe what went wrong and how you resolved it.
 
-_Your entry here._
+_At first, for Part 2b: Distance Storage, I did not realize a separate data structure was being used to store the data.
+I filled in the table describing a graph until I got to the time complexity analysis and realized why we are using a adjacency matrix._
 
 ---
 

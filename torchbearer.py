@@ -67,7 +67,8 @@ def select_sources(spawn, relics, exit_node):
 
     TODO
     """
-    return ""
+
+    return [spawn, relics]
 
 
 def run_dijkstra(graph, source):
@@ -232,7 +233,7 @@ def solve(graph, spawn, relics, exit_node):
 # =============================================================================
 
 def _run_tests():
-    """print("Running provided tests...")
+    print("Running provided tests...")
 
     # Test 1: Spec illustration. Optimal cost = 4.
     graph_1 = {
@@ -244,9 +245,12 @@ def _run_tests():
     }
     cost, order = solve(graph_1, 'S', ['B', 'C', 'D'], 'T')
     assert cost == 4, f"Test 1 FAILED: expected 4, got {cost}"
+
+    select_sources('S', ['B', 'C', 'D'], 'T')
+
     print(f"  Test 1 passed  cost={cost}  order={order}")
 
-    # Test 2: Single relic. Optimal cost = 5.
+    """"# Test 2: Single relic. Optimal cost = 5.
     graph_2 = {
         'S': [('R', 3)],
         'R': [('T', 2)],
@@ -292,3 +296,4 @@ def _run_tests():
 
 if __name__ == "__main__":
     _run_tests()
+
