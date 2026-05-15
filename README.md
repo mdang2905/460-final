@@ -180,13 +180,14 @@ _Correct distance that the torchbearer will not waste torch fuel when making rou
 
 - **What information is available at the current state:** _Current node, nodes visited, fuel burned, relics that are unvisited, and distance storage._
 - **What the lower bound accounts for:** _Minimum fuel needed to visit remaining locations._
-- **Why it never overestimates:** _._
+- **Why it never overestimates:** _Assumings optimal remaining fuel cost. The actual route may need additional cost, but it will not be lower._
 
 ### Part 6c: Pruning Correctness
 
 > One to two bullets. Explain why pruning is safe.
 
-- _Your answer here._
+- Pruning is safe because with non-negative edges, cost will only grow while exploring the path. 
+
 
 ---
 
@@ -194,4 +195,5 @@ _Correct distance that the torchbearer will not waste torch fuel when making rou
 
 > Bullet list. If none beyond lecture notes, write that.
 
-- _Your references here._
+- Dijkstra's Algorithm - ByteQuest.
+- Greedy Algorithm Lecture notes

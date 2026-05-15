@@ -39,16 +39,16 @@ _However, while trying to find a counter example, I realized that an adjacency t
 _I will adjust my answer to Part 2._
 ---
 
-## Entry 4 – [Date]: Post-Implementation Reflection
+## Entry 4 – [May 14, 2026]: Post-Implementation Reflection
 
 > Required. Written after your implementation is complete. Describe what you would
 > change or improve given more time.
 
-_Your entry here._
-
+_There were many points when completing this assignment that I realized that I was approaching the problem incorrectly or misunderstood what some parts were._
+- I would take more time to reach through the problem and fully understand every part of the problem and how they interact with each other.
 ---
 
-## Final Entry – [Date]: Time Estimate
+## Final Entry – [May 14, 2026]: Time Estimate
 
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
@@ -58,8 +58,8 @@ _Your entry here._
 | Part 2: Precomputation Design | 2 hr            |
 | Part 3: Algorithm Correctness | 1 hr            |
 | Part 4: Search Design | 1 hr            |
-| Part 5: State and Search Space |                 |
-| Part 6: Pruning |                 |
-| Part 7: Implementation |                 |
-| README and DEVLOG writing |                 |
-| **Total** |                 |
+| Part 5: State and Search Space | 2 hr            |
+| Part 6: Pruning | 1 hr            |
+| Part 7: Implementation | 30 min          |
+| README and DEVLOG writing | 2 hr            |
+| **Total** | 10.5 hr         |

@@ -272,6 +272,9 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
+
+    # Pruning Condition: If the cost of the current path is exceeding the current lowest cost, skip.
+    # This is safe because with non-negative edges, cost will only grow while exploring the path.
     if cost_so_far >= best[0]:
         return
 
