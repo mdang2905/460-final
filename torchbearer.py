@@ -123,7 +123,7 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
-    sources = [spawn] + [relics]
+    sources = [spawn] + relics
     dist_matr = {}
 
     for u in sources:
@@ -232,11 +232,11 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
     """
 
     curr_node = spawn
-    visited = set()
+    visited = []
     fuel_burned = 0
     best = [float('inf'),[]]
 
-    to_visit = relics
+    to_visit = set(relics)
 
     _explore(dist_table, curr_node, to_visit, visited, fuel_burned, exit_node, best)
 
@@ -272,15 +272,21 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
+    if cost_so_far >= best[0]:
+        return
 
-    if relics_remaining == []:
-        cost_so_far = cost_so_far + dist_table[current_loc][exit_node]
-        if cost_so_far < best[0]:
-            best[0] = cost_so_far
-            best[1] = relics_visited_order
+    if len(relics_remaining) == 0:
+        if dist_table[current_loc][exit_node] == float('inf'):
             return
 
-    for relic in relics_remaining:
+        cost = cost_so_far + dist_table[current_loc][exit_node]
+
+        if cost < best[0]:
+            best[0] = cost
+            best[1] = relics_visited_order.copy()
+            return
+
+    for relic in list(relics_remaining):
         cost = dist_table[current_loc][relic]
 
         if cost == float('inf'):
@@ -289,8 +295,11 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
         current_cost = cost_so_far + cost
         relics_visited_order.append(relic)
         relics_remaining.remove(relic)
+
         _explore(dist_table, relic, relics_remaining, relics_visited_order, current_cost, exit_node, best)
 
+        relics_remaining.add(relic)
+        relics_visited_order.pop()
 
 
 
@@ -316,8 +325,9 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
+    distances = precompute_distances(graph, spawn, relics, exit_node)
 
-    return (float(4), [])
+    return find_optimal_route(distances, spawn, relics, exit_node)
 
 
 # =============================================================================
@@ -343,7 +353,7 @@ def _run_tests():
 
     print(f"  Test 1 passed  cost={cost}  order={order}")
 
-    """"# Test 2: Single relic. Optimal cost = 5.
+    # Test 2: Single relic. Optimal cost = 5.
     graph_2 = {
         'S': [('R', 3)],
         'R': [('T', 2)],
@@ -376,7 +386,7 @@ def _run_tests():
     cost, order = solve(graph_4, 'S', ['R1', 'R2'], 'T')
     assert cost == 6, f"Test 4 FAILED: expected 6, got {cost}"
     print(f"  Test 4 passed  cost={cost}  order={order}")
-"""
+
     # Test 5: Explanation functions must return non-placeholder strings.
     for fn in [explain_problem, dijkstra_invariant_check, explain_search]:
         result = fn()
