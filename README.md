@@ -137,30 +137,30 @@ _Correct distance that the torchbearer will not waste torch fuel when making rou
 > Document the three components of your search state as a table.
 > Variable names here must match exactly what you use in torchbearer.py.
 
-| Component | Variable name in code | Data type | Description |
-|---|---|---|---|
-| Current location | | | |
-| Relics already collected | | | |
-| Fuel cost so far | | | |
+| Component | Variable name in code | Data type | Description                                  |
+|---|-----------------------|-----------|----------------------------------------------|
+| Current location | curr_node             | node      | Stores torchbearer's current node            |
+| Relics already collected | visited               | set[node] | Stores relics that have already been visited |
+| Fuel cost so far | fuel_burned           | float     | Total torch fuel used                        |
 
 ### Part 5b: Data Structure for Visited Relics
 
 > Fill in the table.
 
-| Property | Your answer |
-|---|---|
-| Data structure chosen | |
-| Operation: check if relic already collected | Time complexity: |
-| Operation: mark a relic as collected | Time complexity: |
-| Operation: unmark a relic (backtrack) | Time complexity: |
-| Why this structure fits | |
+| Property | Your answer                          |
+|---|--------------------------------------|
+| Data structure chosen | set[node]                            |
+| Operation: check if relic already collected | Time complexity: O(1)                |
+| Operation: mark a relic as collected | Time complexity: O(1)                |
+| Operation: unmark a relic (backtrack) | Time complexity: O(1)                |
+| Why this structure fits | Quick check, mark, and backtracking. |
 
 ### Part 5c: Worst-Case Search Space
 
 > Two bullets.
 
-- **Worst-case number of orders considered:** _Your answer (in terms of k)._
-- **Why:** _One-line justification._
+- **Worst-case number of orders considered:** _k!_
+- **Why:** _Worst case involves trying every possible combination of k relics._
 
 ---
 

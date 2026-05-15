@@ -230,6 +230,7 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
 
     TODO
     """
+
     pass
 
 

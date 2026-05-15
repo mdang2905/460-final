@@ -53,13 +53,13 @@ _Your entry here._
 > Required. Estimate minutes spent per part. Honesty is expected; accuracy is not graded.
 
 | Part | Estimated Hours |
-|---|---|
-| Part 1: Problem Analysis | |
-| Part 2: Precomputation Design | |
-| Part 3: Algorithm Correctness | |
-| Part 4: Search Design | |
-| Part 5: State and Search Space | |
-| Part 6: Pruning | |
-| Part 7: Implementation | |
-| README and DEVLOG writing | |
-| **Total** | |
+|---|-----------------|
+| Part 1: Problem Analysis | 1 hr            |
+| Part 2: Precomputation Design | 2 hr            |
+| Part 3: Algorithm Correctness | 1 hr            |
+| Part 4: Search Design | 1 hr            |
+| Part 5: State and Search Space |                 |
+| Part 6: Pruning |                 |
+| Part 7: Implementation |                 |
+| README and DEVLOG writing |                 |
+| **Total** |                 |
