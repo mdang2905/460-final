@@ -170,17 +170,17 @@ _Correct distance that the torchbearer will not waste torch fuel when making rou
 
 > Three bullets.
 
-- **What is tracked:** _Your answer here._
-- **When it is used:** _Your answer here._
-- **What it allows the algorithm to skip:** _Your answer here._
+- **What is tracked:** _Lowest torch cost found so far and its order._
+- **When it is used:** _It is used before exploring a an order._
+- **What it allows the algorithm to skip:** _Allows the algorithm to skip an order that already has a higher cost than the lowest._
 
 ### Part 6b: Lower Bound Estimation
 
 > Three bullets.
 
-- **What information is available at the current state:** _Your answer here._
-- **What the lower bound accounts for:** _Your answer here._
-- **Why it never overestimates:** _Your answer here._
+- **What information is available at the current state:** _Current node, nodes visited, fuel burned, relics that are unvisited, and distance storage._
+- **What the lower bound accounts for:** _Minimum fuel needed to visit remaining locations._
+- **Why it never overestimates:** _._
 
 ### Part 6c: Pruning Correctness
 

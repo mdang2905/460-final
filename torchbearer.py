@@ -231,7 +231,16 @@ def find_optimal_route(dist_table, spawn, relics, exit_node):
     TODO
     """
 
-    pass
+    curr_node = spawn
+    visited = set()
+    fuel_burned = 0
+    best = [float('inf'),[]]
+
+    to_visit = relics
+
+    _explore(dist_table, curr_node, to_visit, visited, fuel_burned, exit_node, best)
+
+    return best[0], best[1]
 
 
 def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
@@ -263,7 +272,27 @@ def _explore(dist_table, current_loc, relics_remaining, relics_visited_order,
     explaining why it is safe (cannot skip the optimal solution).
     This comment is graded.
     """
-    pass
+
+    if relics_remaining == []:
+        cost_so_far = cost_so_far + dist_table[current_loc][exit_node]
+        if cost_so_far < best[0]:
+            best[0] = cost_so_far
+            best[1] = relics_visited_order
+            return
+
+    for relic in relics_remaining:
+        cost = dist_table[current_loc][relic]
+
+        if cost == float('inf'):
+            continue
+
+        current_cost = cost_so_far + cost
+        relics_visited_order.append(relic)
+        relics_remaining.remove(relic)
+        _explore(dist_table, relic, relics_remaining, relics_visited_order, current_cost, exit_node, best)
+
+
+
 
 
 # =============================================================================
@@ -287,6 +316,7 @@ def solve(graph, spawn, relics, exit_node):
 
     TODO
     """
+
     return (float(4), [])
 
 
