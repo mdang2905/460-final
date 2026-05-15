@@ -33,10 +33,10 @@
 
 > List the source node types as a bullet list. For each, one-line reason.
 
-| Source Node Type    | Why it is a source                             |
-|---------------------|------------------------------------------------|
-| _Entrance Node S_   | _Can travel to other nodes starting at S._     |
-| _Dungeon Locations_ | _Can travel to other locations and the exit T_ |
+| Source Node Type  | Why it is a source                          |
+|-------------------|---------------------------------------------|
+| _Entrance Node S_ | _Can travel to other nodes starting at S._  |
+| _Relics_          | _Can travel to other Relics and the exit T_ |
 
 ### Part 2b: Distance Storage
 
@@ -54,10 +54,10 @@
 
 > State the total complexity and show the arithmetic. Two to three lines max.
 
-- **Number of Dijkstra runs:** _your answer_
-- **Cost per run:** _your answer_
-- **Total complexity:** _your answer_
-- **Justification (one line):** _your answer_
+- **Number of Dijkstra runs:** _Number of relics m + Start 1 = m + 1_
+- **Cost per run:** _O(nlogn)_
+- **Total complexity:** _O((m + 1)(nlogn))_
+- **Justification (one line):** _We need to run Dijkstra from every source node (entrance and relics)_
 
 ---
 
