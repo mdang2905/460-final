@@ -44,11 +44,11 @@
 
 | Property | Your answer                                                |
 |---|------------------------------------------------------------|
-| Data structure name | Adjacency Matrix                                           |
-| What the keys represent | start location 'u' and end location 'v'                        |
+| Data structure name | Nested Dictionary                                          |
+| What the keys represent | start location 'u' and end location 'v'                    |
 | What the values represent | Torch cost to reach that location from the source location |
 | Lookup time complexity | O(1)                                                       |
-| Why O(1) lookup is possible | Look up cost for (u, v). |
+| Why O(1) lookup is possible | Direct look up cost for (u, v)                             |
 
 ### Part 2c: Precomputation Complexity
 
@@ -108,17 +108,25 @@ _Correct distance that the torchbearer will not waste torch fuel when making rou
 > State the failure mode. Then give a concrete counter-example using specific node names
 > or costs (you may use the illustration example from the spec). Three to five bullets.
 
-- **The failure mode:** _Your answer here._
-- **Counter-example setup:** _Your answer here._
-- **What greedy picks:** _Your answer here._
-- **What optimal picks:** _Your answer here._
-- **Why greedy loses:** _Your answer here._
+- **The failure mode:** _Algorithm always chooses the cheapest available path to an unvisited node._
+- **Counter-example setup:** _Using 
+    graph = {
+    'S': [('B', 1), ('C', 1)],
+    'B': [('C', 1), ('D', 2), ('T', 3)],
+    'C': [('B', 1), ('D', 4), ('T', 1)],
+    'D': [('B', 1), ('C', 3)],
+    'T': []
+    }
+- _
+- **What greedy picks:** _Greedy would pick B, C, D, T with total 10
+- **What optimal picks:** _Optimal is B, D, C, T with total 6_
+- **Why greedy loses:** _Greedy loses because at B, it chooses the cheapest option C. The cost to go from C to D is pretty costly. Optimal chooses B to D which saves cost._
 
 ### What the Algorithm Must Explore
 
 > One bullet. Must use the word "order."
 
-- _Your answer here._
+- _The algorithm must explore all possible combinations of paths and different orders of node exploration._
 
 ---
 

@@ -32,10 +32,11 @@ I filled in the table describing a graph until I got to the time complexity anal
 
 ---
 
-## Entry 3 – [Date]: [Short description]
+## Entry 3 – [May 14, 2026]: Another Wrong Assumption
 
-_Your entry here._
-
+_After Part 2b and Entry 2, I thought the distance storage was meant to be an adjacency matrix._ 
+_However, while trying to find a counter example, I realized that an adjacency table only stores direct edges, while the distance storage stores distances from a source node to every other node, sometimes going through other nodes._
+_I will adjust my answer to Part 2._
 ---
 
 ## Entry 4 – [Date]: Post-Implementation Reflection

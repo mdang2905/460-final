@@ -44,7 +44,6 @@ def explain_problem():
     - **Why this requires a search over orders (one sentence):**
     _To make the most cost-efficient run, we want to prioritize the corridors with the least amount of torch cost._"""
 
-    print(part1)
     return part1
 
 
@@ -184,7 +183,27 @@ def explain_search():
 
     TODO
     """
-    return ""
+
+    part4 = """
+    - **The failure mode:** _Algorithm always chooses the cheapest available path to an unvisited node._
+- **Counter-example setup:** _Using 
+    graph = {
+    'S': [('B', 1), ('C', 1)],
+    'B': [('C', 1), ('D', 2), ('T', 3)],
+    'C': [('B', 1), ('D', 4), ('T', 1)],
+    'D': [('B', 1), ('C', 3)],
+    'T': []
+    }
+- _
+- **What greedy picks:** _Greedy would pick B, C, D, T with total 10
+- **What optimal picks:** _Optimal is B, D, C, T with total 6_
+- **Why greedy loses:** _Greedy loses because at B, it chooses the cheapest option C. The cost to go from C to D is pretty costly. Optimal chooses B to D which saves cost._
+
+_The algorithm must explore all possible combinations of paths and different orders of node exploration._
+    
+    
+    """
+    return part4
 
 
 # =============================================================================
