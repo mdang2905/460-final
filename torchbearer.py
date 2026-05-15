@@ -124,7 +124,13 @@ def precompute_distances(graph, spawn, relics, exit_node):
 
     TODO
     """
-    pass
+    sources = [spawn] + [relics]
+    dist_matr = {}
+
+    for u in sources:
+        dist_matr[u] = run_dijkstra(graph, u)
+
+    return dist_matr
 
 
 # =============================================================================
@@ -141,7 +147,27 @@ def dijkstra_invariant_check():
 
     TODO
     """
-    return ""
+    part3 = """
+    - **For nodes already finalized (in S):**
+  _dist[v] is the shortest path to get from x to v_
+
+- **For nodes not yet finalized (not in S):**
+  _dist[u] is the shortest path known to get from x to v using finalized nodes in S_
+  
+  - **Initialization : why the invariant holds before iteration 1:**
+  _Before iteration 1, only the source distance is known: 0. That is the shortest path from source to itself._
+  _All remaining nodes u have not been discovered yet and S only stores the source._
+
+- **Maintenance : why finalizing the min-dist node is always correct:**
+  _Dijkstras uses a priority queue, which means that as long as the edges are non-negative._ 
+  _The shortest distance will always be processed first and therefore, the shortest distance to every node will be produced._
+  
+- **Termination : what the invariant guarantees when the algorithm ends:**
+  _The invariant guarantees that when the algorithm ends, only the shortest distances from source x to other locations will be stored in S._
+
+_Correct distance that the torchbearer will not waste torch fuel when making routing decisions._
+    """
+    return part3
 
 
 # =============================================================================
